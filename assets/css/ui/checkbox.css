@@ -1,0 +1,14 @@
+div.checkbox > input {
+    accent-color: #2536b7;
+    transform: scale(120%);
+}
+
+div.checkbox {
+    padding: 6px 0;
+    display: flex;
+    gap: 6px;
+}
+
+div.checkbox > label {
+    color: #262929;
+}

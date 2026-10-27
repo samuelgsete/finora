@@ -1,0 +1,39 @@
+@import url('base.css');
+
+img {
+    width: 140px;
+    margin-bottom: 10px;
+}
+
+div#content {
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5F6F8;
+    padding: 1% 0;
+}
+
+form {
+    padding: 30px;
+    width: 450px;
+    background-color: #fff;
+    border-radius: 12px;
+    border: 2px solid #e7e7e7;
+    margin-top: 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+}
+
+h1, p {
+    margin: 8px 0;
+}
+
+h1 {
+    color: #202020;
+    font-size: 25px;
+}
+
+p {
+    font-size: 15px;
+    color: #74767a;
+}

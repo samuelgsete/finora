@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+        <link rel="stylesheet" href="assets/css/index.css">
+        <title>Minhas finanças</title>
+    </head>
+    <body>
+        <div id="content">
+        
+            <main>
+
+                <header>
+                    <img src="assets/img/logo.png" alt="Finora">
+
+                    <a href="novo-lancamento.html" class="btn btn-primary">
+                        <span class="material-symbols-outlined">add</span>
+                        Novo lançamento
+                    </a>
+                </header>
+
+                <section class="period">
+                    <select class="select-lg" id="mes" name="mes" onchange="definirPeriodo()"></select>
+                    <select class="select-lg" id="ano" name="ano" onchange="definirPeriodo()"></select>
+                </section>
+
+                <section class="resume">
+                    <div class="card-resume card-bg-green">
+                        <div class="icon-box box-green-bg">
+                            <span class="material-symbols-outlined">arrow_outward</span>
+                        </div>
+                        <p class="card-label">Receitas</p>
+                        <h1 id="valor-receitas" class="card-value">R$ 0,00</h1>
+                    </div>
+
+                    <div class="card-resume card-bg-red">
+                        <div class="icon-box box-red-bg">
+                            <span class="material-symbols-outlined">south_east</span>
+                        </div>
+                        <p class="card-label">Despesas</p>
+                        <h1 id="valor-despesas" class="card-value">R$ 0,00</h1>
+                    </div>
+
+                    <div class="card-resume card-bg-blue">
+                        <div class="icon-box box-blue-bg">
+                            <span class="material-symbols-outlined">wallet</span>
+                        </div>
+                        <p class="card-label">Saldo</p>
+                        <h1 id="saldo" class="card-value">R$ 0,00</h1>
+                    </div>
+                </section>
+
+                <section class="progress-bar">
+                    <div class="progress-box">
+                        <div class="percent"></div>
+                    </div>
+                    <p>
+                        <strong id="usuario">Olá,</strong> você consumiu 
+                        <strong id="percentual-salario">0%</strong> da sua renda de 
+                        <strong id="renda">R$ 0,00</strong>
+                        <a href="renda.html" class="btn-icon">
+                            <span class="material-symbols-outlined">edit</span>
+                        </a>
+                    </p>
+                </section>
+
+                <section class="transactions">
+                    <div class="transactions-header">
+                        <h2>Lançamentos</h2>
+                        <div class="filters">
+                            <button class="btn btn-filter filter-active" onclick="filtrarPorTipo()">Todos</button>
+                            <button class="btn btn-filter" onclick="filtrarPorTipo('RECEITA')">Receitas</button>
+                            <button class="btn btn-filter" onclick="filtrarPorTipo('DESPESA')">Despesas</button>
+                        </div>
+                    </div>
+
+                    <div class="table-box">
+                        <table id="lancamentos"></table>
+                    </div>
+
+                    <button class="btn btn-light" onclick="logout()">
+                        <span class="material-symbols-outlined">logout</span>
+                        Sair
+                    </button>
+
+                </section>
+
+            </main>
+
+            <script src="assets/js/auth.js"></script>
+            <script src="assets/js/spinner.js"></script>
+            <script src="assets/js/index.js"></script>
+            <script src="assets/js/ui.js"></script>
+        </div>
+    </body>
+</html>

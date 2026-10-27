@@ -1,0 +1,62 @@
+@import url('base.css');
+
+img {
+    width: 140px;
+    margin: 0 auto;
+    display: block;
+}
+
+div#content {
+    min-height: 100%;
+    padding: 1% 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5F6F8;
+}
+
+section {
+    margin-top: 25px;
+    padding: 30px;
+    width: 380px;
+    background-color: #fff;
+    border-radius: 12px;
+    border: 2px solid #E4E7EC;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+h1, p {
+    text-align: center;
+    margin: 8px 0;
+}
+
+h1 {
+    font-size: 25px;
+    color: #202020;
+}
+
+p {
+    margin-bottom: 25px;
+    font-size: 14px;
+    color: #74767a;
+}
+
+p.novo-perfil {
+    margin-top: 30px;
+    font-size: 15px;
+    text-align: center !important;
+}
+
+p.novo-perfil > a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #2131a5;
+}
+
+p.novo-perfil > a:hover {
+    text-decoration: underline;
+}

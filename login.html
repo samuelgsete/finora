@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+        <link rel="stylesheet" href="assets/css/login.css">
+        <title>Entre no Finora</title>
+    </head>
+    <body>
+        <div id="content">
+            <main>
+
+                <img src="assets/img/logo.png" alt="Finora">
+                
+                <section>
+
+                    <h1>Olá de novo!</h1>
+                    <p>Entre para ver como estão suas finanças.</p>
+
+                    <form onsubmit="entrar(event)">
+
+                        <div class="field">
+                            <label for="email">E-mail</label>
+                            <input
+                                class="input-text"
+                                type="email"
+                                name="email"
+                                id="email"
+                                placeholder="Ex.: usuario@email.com"
+                                maxlength="100"
+                                required
+                                autofocus
+                            >
+                        </div>
+
+                        <div class="field">
+                            <label for="senha">Senha</label>
+                            <input
+                                class="input-text"
+                                type="password"
+                                name="senha"
+                                id="senha"
+                                placeholder="&bull;&bull;&bull;&bull;"
+                                minlength="4"
+                                maxlength="8"
+                                required
+                            >
+                        </div>
+
+                        <div id="login-fail" class="alert danger-alert hide-alert">
+                            E-mail ou senha inválidos
+                        </div>
+
+                        <div class="checkbox">
+                            <input type="checkbox" name="conectado" id="conectado" checked>
+                            <label for="conectado">Matenha-me conectado</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary block">Entrar</button>                        
+                    </form>
+                </section>
+                <p class="novo-perfil">Ainda não tem perfil? <a href="perfil.html">Criar perfil</a></p>
+            </main>
+
+            <script src="assets/js/ui.js"></script>
+            <script src="assets/js/spinner.js"></script>
+            <script src="assets/js/login.js"></script>
+        </div>
+    </body>
+</html>

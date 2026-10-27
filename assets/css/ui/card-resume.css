@@ -1,0 +1,59 @@
+div.card-resume {
+    padding: 20px;
+    border-radius: 16px;
+    position: relative;
+    flex-grow: 1; /* O espaço que sobrar na linha é dividido igualmente entre os cards */
+    min-width: 280px; /* Largura mínima de cada card */
+    box-shadow: #0000001a 0px 4px 12px;
+}
+
+div.card-resume > .icon-box {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+p.card-label {
+    font-size: 17px;
+    margin-bottom: 25px;
+}
+
+h1.card-value {
+    font-size: 32px;
+}
+
+div.card-bg-blue {
+    background-color: #EEF0FB;
+}
+
+div.card-bg-blue > p.card-label {
+    color: #2B3899;
+}
+
+div.card-bg-blue > h1.card-value {
+    color: #1E2A80;
+}
+
+div.card-bg-red {
+    background-color: #FDEDEC;
+}
+
+div.card-bg-red > p.card-label {
+    color: #A01D14;
+}
+
+div.card-bg-red > h1.card-value {
+    color: #8E1A12;
+}
+
+div.card-bg-green {
+    background-color: #E9F6EF;
+}
+
+div.card-bg-green > p.card-label {
+    color: #0F6B45;
+}
+
+div.card-bg-green > h1.card-value {
+    color: #0B5A39;
+}

@@ -1,0 +1,118 @@
+@import url('base.css');
+
+main {
+    padding: 2% 6%;
+}
+
+header {
+    width: 100%;
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: 2px solid #eef0f9;
+}
+
+header > img {
+    width: 160px;
+    cursor: pointer;
+}
+
+section.resume {
+    padding: 15px 0;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+section.progress-bar {
+    margin: 10px 0 0 0;
+}
+
+section.progress-bar > p {
+    font-size: 17px;
+    margin: 15px 0;
+    color: #5c5c5c;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
+}
+
+section.progress-bar > p > strong {
+    color: #141414;
+}
+
+section.transactions {
+    padding: 10px 0;
+}
+
+div.transactions-header {
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+div.transactions-header > div.filters {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+div.transaction {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+div.transaction > div > p {
+    font-size: 17px;
+    font-weight: 450;
+}
+
+div.transaction > div > span {
+    font-size: 16px;
+    color: #7d7d7d;
+}
+
+.currency-red {
+    font-size: 18px;
+    font-weight: 600;
+    color: #A01D14;
+}
+
+.currency-green {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0F6B45;
+}
+
+section.period {
+    padding: 15px 0;
+}
+
+table tr td:last-child {
+    width: 50px;
+}
+
+table tr td > span.material-symbols-outlined {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+@media (max-width: 430px) {
+    .btn {
+        width: 100% !important;
+    }
+
+    .btn-filter {
+        margin: 4px 0 !important;
+    }
+
+    div.filters {
+        gap: 0 !important;
+    }
+}

@@ -1,0 +1,28 @@
+table {
+    width: 100%;
+    border-collapse: collapse;  /* junta as bordas das células */
+    font-size: 15px;
+}
+
+table th, table td {
+    padding: 20px 8px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+table tr {
+    border-bottom: 2px solid #e7e7e7;
+}
+
+table tr:last-child {
+    border: none;
+}
+
+.align-right {
+    text-align: right;
+}
+
+div.table-box {
+    width: 100%;
+    overflow: auto;
+}

@@ -1,0 +1,14 @@
+div.progress-box {
+    width: 100%;
+    background-color: #E9F6EF;
+}
+
+div.progress-box, div.percent {
+    height: 12px;
+    border-radius: 20px;
+}
+
+div.progress-box > div.percent {
+    width: 0%;
+    background-color: #8E1A12;
+}

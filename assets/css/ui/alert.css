@@ -1,0 +1,13 @@
+div.alert {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 15px;
+    margin: 5px 0;
+    color: #c90303;
+    border-radius: 6px;
+    background-color: rgba(239, 68, 68, .13);
+}
+
+.hide-alert {
+    display: none;
+}

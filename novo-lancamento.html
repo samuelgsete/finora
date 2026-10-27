@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+        <link rel="stylesheet" href="assets/css/novo-lancamento.css">
+        <title>Novo lançamento</title>
+    </head>
+    <body>
+            
+        <div id="content">
+
+            <section>
+
+                <a href="index.html" class="btn btn-light">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                    Voltar
+                </a>
+
+                <img src="assets/img/logo.png" alt="Finora">
+
+                <h1>Novo lançamento</h1>
+                <p>Registre uma entrada ou saída de dinheiro.</p>
+
+                <form onsubmit="salvar(event)" method="POST">
+
+                    <div class="field">
+                        <div class="radio-title">O que deseja lançar?</div>
+                        <div class="radio-box">
+                            <div class="radio-option" title="Dinheiro que entra">
+                                <input type="radio" name="tipo" id="receita" value="RECEITA" required>
+                                <label for="receita">Receita</label>
+                            </div>
+                            <div class="radio-option" title="Dinheiro que sai">
+                                <input type="radio" name="tipo" id="despesa" value="DESPESA" checked required>
+                                <label for="despesa">Despesa</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="descricao">Descrição</label>
+                        <input
+                            class="input-text"
+                            type="text"
+                            name="descricao"
+                            id="descricao"
+                            placeholder="Ex.: Mercado do mês"
+                            maxlength="30"
+                            required
+                            autofocus
+                        >
+                    </div>
+
+                    <div class="field">
+                        <label for="valor">Valor em R$</label>
+                        <input
+                            class="input-text"
+                            type="number"
+                            name="valor"
+                            id="valor"
+                            placeholder="Ex: 49,90"
+                            min="0.01"
+                            step="0.01"
+                            required
+                        >
+                    </div>
+
+                    <div class="field">
+                        <label for="data">Data</label>
+                        <input
+                            class="input-text"
+                            type="date"
+                            name="data"
+                            id="data"
+                            required
+                        >
+                    </div>
+
+                    <div class="field">
+                        <label for="categoria">Categoria</label>
+                        <select class="select-default block" name="categoria" id="categoria">
+                            <option value="">selecione...</option>
+                            <option value="Alimentação">Alimentação</option>
+                            <option value="Moradia">Moradia</option>
+                            <option value="Transporte">Transporte</option>
+                            <option value="Lazer">Lazer</option>
+                            <option value="Saúde">Saúde</option>
+                            <option value="Educação">Educação</option>
+                            <option value="Renda extra">Renda extra</option>
+                            <option value="Outros">Outros</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="observacoes">Observações (opcional)</label>
+                        <textarea 
+                            class="block"
+                            name="observacoes"
+                            id="observacoes"
+                            placeholder="Ex.: Pago no cartão ou débito"
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary block">Salvar lançamento</button>
+                    <button type="reset" class="btn btn-outline block">Cancelar</button>
+                
+                </form>
+            </section>
+            <script src="assets/js/auth.js"></script>
+            <script src="assets/js/ui.js"></script>
+            <script src="assets/js/spinner.js"></script>
+            <script src="assets/js/novo-lancamento.js"></script>
+        </div>
+    </body>
+</html>

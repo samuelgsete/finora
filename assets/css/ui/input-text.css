@@ -1,0 +1,38 @@
+div.field {
+    margin: 12px 0;
+}
+
+input.input-text, div.field > label {
+    display: block;
+}
+
+div.field > label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #161A23;
+    transition: all 0.3s;
+}
+
+div.field > label.focus {
+    color: #3B4CCA;
+} 
+
+input.input-text, textarea {
+    margin: 4px 0;
+    font-size: 16px;
+    padding: 12px;
+    width: 100%;
+    color: #292929;
+    border-radius: 10px;
+    border: 2px solid #CFD4DC;
+    transition: all 0.4s;
+}
+
+input.input-text:hover, textarea:hover {
+    border-color: #bcc4f6;
+}
+
+input.input-text:focus, textarea:focus {
+    outline: none;
+    border-color: #3B4CCA;
+}

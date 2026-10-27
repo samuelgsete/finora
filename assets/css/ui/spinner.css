@@ -1,0 +1,33 @@
+
+div#spinner-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  cursor: wait;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #46464f37; 
+}
+
+img.spinner-img {
+  width: 50px;
+  animation: girar 0.5s linear infinite;
+}
+
+.hide-spinner {
+  display: none !important;
+}
+
+@keyframes girar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

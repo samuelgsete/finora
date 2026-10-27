@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+        <link rel="stylesheet" href="assets/css/renda.css">
+        <title>Crie seu perfil</title>
+    </head>
+    <body>
+        <div id="content">
+            <main>
+
+                <a href="index.html" class="btn btn-light">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                    Voltar
+                </a>
+
+                <img src="assets/img/logo.png" alt="Finora">
+                
+                <section>
+
+                    <h1>Sua renda mudou?</h1>
+                    <p>
+                        Atualize sua renda mensal. Assim, mostramos quanto dela você já gastou em cada mês do ano.
+                    </p>
+
+                    <form name="renda" onsubmit="atualizarRenda(event)">
+
+                        <input type="hidden" name="id">
+
+                        <div class="field">
+                            <label for="nome">Como podemos te chamar?</label>
+                            <input
+                                class="input-text"
+                                type="text"
+                                name="nome"
+                                id="nome"
+                                placeholder="Ex.: Mateus"
+                                maxlength="30"
+                                required
+                            >
+                        </div>
+
+                        <div class="field">
+                            <label for="renda">Qual a sua renda mensal?</label>
+                            <input
+                                class="input-text"
+                                type="number"
+                                name="renda"
+                                id="renda"
+                                placeholder="Ex: 16021,07"
+                                min="0.01"
+                                step="0.01"
+                                required
+                                autofocus
+                            >
+                        </div>
+
+                        <button type="submit" class="btn btn-primary block">Atualizar renda</button>
+                                                
+                    </form>
+                </section>
+            </main>
+
+            <script src="assets/js/ui.js"></script>
+            <script src="assets/js/spinner.js"></script>
+            <script src="assets/js/renda.js"></script>
+        </div>
+    </body>
+</html>

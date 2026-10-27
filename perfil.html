@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+        <link rel="stylesheet" href="assets/css/perfil.css">
+        <title>Crie seu perfil</title>
+    </head>
+    <body>
+        <div id="content">
+            <main>
+
+                <a href="login.html" class="btn btn-light">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                    Login
+                </a>
+
+                <img src="assets/img/logo.png" alt="Finora">
+                
+                <section>
+
+                    <h1>Vamos começar</h1>
+                    <p>
+                        Crie seu perfil e informe sua renda mensal. Assim, mostramos quanto dela você já gastou em cada mês do ano.
+                    </p>
+
+                    <form onsubmit="criarPerfil(event)">
+
+                        <input type="hidden" name="id_perfil">
+
+                        <div class="field">
+                            <label for="nome">Como podemos te chamar?</label>
+                            <input
+                                class="input-text"
+                                type="text"
+                                name="nome"
+                                id="nome"
+                                placeholder="Ex.: Mateus"
+                                maxlength="30"
+                                required
+                                autofocus
+                            >
+                        </div>
+
+                        <div class="field">
+                            <label for="email">Informe um e-mail</label>
+                            <input
+                                class="input-text"
+                                type="email"
+                                name="email"
+                                id="email"
+                                placeholder="Ex.: usuario@email.com"
+                                maxlength="100"
+                                required
+                            >
+                        </div>
+
+                        <div class="field">
+                            <label for="senha">Cadastra sua senha</label>
+                            <input
+                                class="input-text"
+                                type="password"
+                                name="senha"
+                                id="senha"
+                                placeholder="&bull;&bull;&bull;&bull;"
+                                minlength="4"
+                                maxlength="8"
+                                required
+                            >
+                        </div>
+
+                        <div class="field">
+                            <label for="renda">Qual a sua renda mensal?</label>
+                            <input
+                                class="input-text"
+                                type="number"
+                                name="renda"
+                                id="renda"
+                                placeholder="Ex: 16021,07"
+                                min="0.01"
+                                step="0.01"
+                                required
+                            >
+                        </div>
+
+                        <button type="submit" class="btn btn-primary block">Começar agora</button>
+                        <button type="reset" class="btn btn-outline block">Cancelar</button>
+                        
+                    </form>
+                </section>
+            </main>
+
+            <script src="assets/js/ui.js"></script>
+            <script src="assets/js/spinner.js"></script>
+            <script src="assets/js/perfil.js"></script>
+        </div>
+    </body>
+</html>
