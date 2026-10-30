@@ -19,7 +19,7 @@ button.btn-primary, a.btn-primary {
     color: #fff;
     background-color: #3B4CCA;
     border: 2.5px solid #3B4CCA;
-    box-shadow: #00000029 0px 1px 4px;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
 }
 
 button.btn-primary:hover, a.btn-primary:hover {
@@ -37,7 +37,7 @@ button.btn-light, a.btn-light {
 button.btn-light:hover, a.btn-light:hover {
     color: #3B4CCA;
     background-color: #2536b71e;
-    box-shadow: #00000029 0px 1px 4px;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
 } 
 
 button.btn-outline, a.btn-outline {
@@ -51,7 +51,7 @@ button.btn-outline:hover, a.btn-outline:hover {
     color: #3B4CCA;
     background-color: #f3f3f3;
     border: 2.5px solid #f3f3f3;
-    box-shadow: #00000029 0px 1px 4px;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
 }
 
 button.btn-filter {
@@ -67,7 +67,7 @@ button.btn-filter:hover {
     color: #fff;
     background-color: #161A23;
     border: 2px solid #161A23;
-    box-shadow: #00000029 0px 1px 4px;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
 }
 
 button.filter-active {
@@ -94,7 +94,7 @@ button.btn-icon, a.btn-icon {
 
 button.btn-icon:hover, a.btn-icon:hover {
     background-color: #161a231d;
-    box-shadow: #00000029 0px 1px 4px;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
 }
 
 .block {

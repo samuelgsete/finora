@@ -34,6 +34,7 @@ select.select-default {
 select.select-default:focus {
     outline: none;
     border-color: #3B4CCA;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
 }
 
 select.select-default:hover {

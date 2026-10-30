@@ -1,5 +1,4 @@
 
-
 function gerarSelectAno() {
     const anos = [2022, 2023, 2024, 2025, 2026];
     const selectAno = document.querySelector('#ano');
@@ -49,10 +48,7 @@ function gerarSelectMes() {
 }
 
 async function carregarPerfil() {
-    const conf = {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' }
-    }
+    const conf = { method: 'GET' }
 
     const id_perfil = localStorage.getItem('id_perfil');
 
@@ -69,23 +65,19 @@ async function buscarLancamentos(mesAtual, anoAtual, tipo = 'Todos')
 {
     startSpinner();
 
-    const conf = {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' }
-    }
+    const conf = { method: 'GET' }
     
     const id_perfil = localStorage.getItem('id_perfil');
     const url = `https://6adb8eab3b7e90b820900f43.mockapi.io/lancamentos?id_perfil=${id_perfil}`;
 
     const resposta = await fetch(url, conf);
+    
     stopSpinner();  
 
-    if(!resposta.ok) {
-        return [];    
-    }
+    if(!resposta.ok) { return []; }
 
     const lancamentos = await resposta.json();
-
+  
     const lancamentosFiltrados = lancamentos
         .filter(lancamento => {
             const [ano, mes, dia] = lancamento.data.split('-');
@@ -105,22 +97,16 @@ async function povoarTabela(mesAtual, anoAtual, tipo = 'Todos')
     tabela.innerHTML = 'Um momento...';
 
     const lancamentos = await buscarLancamentos(mesAtual, anoAtual, tipo);
+    const lancamentosBkp = [...lancamentos]; // Cria uma cópia do array original
 
-    const perfil = await carregarPerfil();
-    const strongRenda = document.querySelector('#renda');
-    strongRenda.textContent = `R$ ${perfil.renda.toFixed(2)}`;
-
-    const strongUsuario = document.querySelector('#usuario');
-    strongUsuario.textContent =  `${perfil.nome},`;
-
-    if(lancamentos.length == 0) {
+    if(lancamentosBkp.length == 0) {
         tabela.innerHTML = 'Nenhum lançamento encontrado!';
         return;
     }
 
     tabela.innerHTML = '';
 
-    lancamentos.forEach(lancamento => {
+    lancamentosBkp.forEach(lancamento => {
         const tr = document.createElement('tr');
         const avatar = lancamento.categoria[0];
         const [ano, mes, dia] = lancamento.data.split('-');
@@ -149,8 +135,36 @@ async function povoarTabela(mesAtual, anoAtual, tipo = 'Todos')
         `;
 
         tabela.append(tr);
-
     });
+}
+
+async function exibirNomeRenda()
+{
+    const perfil = await carregarPerfil();
+    const pedacosNome = perfil.nome.split(' ');
+    const usuario = pedacosNome[0];
+
+    const strongUsuario = document.querySelector('#usuario');
+    strongUsuario.textContent =  `${usuario},`;
+
+    const strongRenda = document.querySelector('#renda');
+    strongRenda.textContent = `R$ ${perfil.renda.toFixed(2)}`;
+}
+
+async function calcularMetricas()
+{
+    const conf = { method: 'GET' }
+    
+    const id_perfil = localStorage.getItem('id_perfil');
+    const url = `https://6adb8eab3b7e90b820900f43.mockapi.io/lancamentos?id_perfil=${id_perfil}`;
+
+    const resposta = await fetch(url, conf); 
+
+    if(!resposta.ok) { return; }
+
+    const lancamentos = await resposta.json();
+
+    const perfil = await carregarPerfil();
 
     const despesas = lancamentos.filter(lancamento => lancamento.tipo === 'DESPESA');
     const receitas = lancamentos.filter(lancamento => lancamento.tipo === 'RECEITA');
@@ -169,8 +183,7 @@ async function povoarTabela(mesAtual, anoAtual, tipo = 'Todos')
 
     const valorSaldo = document.querySelector('#saldo');
     valorSaldo.textContent = `R$ ${saldo.toFixed(2)}`;
-    
-    // Quanto porcento você gastou por mês
+
     const percentualGastos = Math.abs((balanco * 100) / perfil.renda);
 
     const percentualSalario = document.querySelector('#percentual-salario');
@@ -222,13 +235,7 @@ async function remover(id) {
 
         stopSpinner();
 
-        const hoje = new Date();
-        const anoAtual = hoje.getFullYear();
-        const mesAtual = hoje.getMonth() + 1;
-
-        if(resposta.ok) {
-            povoarTabela(mesAtual, anoAtual);
-        }
+        if(resposta.ok) { window.location.reload() }
     }
 }
 
@@ -239,6 +246,6 @@ const mesAtual = hoje.getMonth() + 1;
 gerarSelectAno();
 gerarSelectMes();
 
+calcularMetricas();
+exibirNomeRenda();
 povoarTabela(mesAtual, anoAtual);
-
-carregarPerfil();

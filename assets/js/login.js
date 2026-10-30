@@ -8,11 +8,11 @@ async function entrar(evento) {
 
     const email = form.email.value;
     const senha =  form.senha.value;
+    const conectado = form.conectado.checked;
 
-    const conf = {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' }
-    }
+    conectado ? localStorage.setItem('email', email) : localStorage.removeItem('email')
+
+    const conf = { method: 'GET' }
 
     const url = `https://6adb8eab3b7e90b820900f43.mockapi.io/perfil?email=${email}&senha=${senha}`;
     const resposta = await fetch(url, conf);
@@ -22,7 +22,6 @@ async function entrar(evento) {
 
         const perfil = dados[0];
 
-        localStorage.setItem('usuario', perfil.nome);
         localStorage.setItem('id_perfil', perfil.id)
 
         window.location.href = 'index.html';
@@ -34,3 +33,8 @@ async function entrar(evento) {
 
     stopSpinner();
 }
+
+const form = document.forms['login'];
+
+form.conectado.checked = localStorage.getItem('email') != undefined;
+form.email.value = localStorage.getItem('email') || '';

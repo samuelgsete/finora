@@ -35,4 +35,5 @@ input.input-text:hover, textarea:hover {
 input.input-text:focus, textarea:focus {
     outline: none;
     border-color: #3B4CCA;
+    box-shadow: #0000000a 0px 3px 5px;
 }

@@ -1,14 +1,10 @@
-const nome = localStorage.getItem('usuario');
-const renda = localStorage.getItem('renda');
+const id_perfil = localStorage.getItem('id_perfil');
 
-if(nome == undefined && renda == undefined) {
+if(id_perfil == undefined) {
     window.location.href = 'login.html';
 }
 
 function logout() {
-    localStorage.removeItem('usuario');
-    localStorage.removeItem('renda');
     localStorage.removeItem('id_perfil');
-
     window.location.href = 'login.html';
 }
